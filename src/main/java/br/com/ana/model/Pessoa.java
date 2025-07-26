@@ -6,12 +6,17 @@ public class Pessoa {
 
     private Integer idade;
 
+    private String cidade;
+    
+
     public Pessoa() {
     }
 
-    public Pessoa(String nome, Integer idade) {
+    public Pessoa(String nome, Integer idade, String cidade) {
         this.nome = nome;
         this.idade = idade;
+        this.cidade = cidade;
+        
     }
 
     public String getNome() {
@@ -28,5 +33,15 @@ public class Pessoa {
 
     public void setIdade(Integer idade) {
         this.idade = idade;
+    }
+
+    public String getCidade() {
+
+        return cidade;
+    }
+
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 }

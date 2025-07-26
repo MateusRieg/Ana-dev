@@ -21,42 +21,56 @@ public class AppInit {
             int opcao = sc.nextInt();
             switch (opcao) {
                 case 1:
-                    if(!pessoas.isEmpty()) {
-                        System.out.println("Maximo de pessoas ja cadastradas.");
-                        break;
-                    }
                     System.out.println("Insira seu nome: ");
                     String name = sc.next();
                     System.out.println("Agora Diga sua idade: ");
                     int idade = sc.nextInt();
+                    System.out.println("Por fim, diga sua cidade: ");
+                    String cidade = sc.next();
+
+                    
 
                     Pessoa pessoa1 = new Pessoa();
                     pessoa1.setNome(name);
                     pessoa1.setIdade(idade);
+                    pessoa1.setCidade(cidade);
                     pessoas.add(pessoa1);
                     break;
                 case 2:;
                 case 3:
                     System.out.println("**** Lista de pessoas Cadastradas ****");
-                    for (Pessoa ps : pessoas) {
-                        System.out.println("Nome: " + ps.getNome() );
-                        System.out.println("Nome: " + ps.getIdade() );
+                    Pessoa selecionada;
+
+                    for (Pessoa person : pessoas) {
+                        System.out.println("Nome: " + person.getNome() );
+                        System.out.println("Idade: " + person.getIdade() );
+                        System.out.println("Cidade: " + person.getCidade() );
                         System.out.println(" ");
-                    }
+                    
+
+                        if(person.getCidade().equals("Florianopolis")  ) {
+                            System.out.println("Você é manezinho!");
+                            selecionada = person;
+                        }
+                    
+                    } 
+
+
+                    selecionada.getNome();
+                
+
                     break;
                 case 4:
                     program = false;
                     break;
                 default:
                     throw new IllegalStateException("Essa opção não é valida: " + opcao);
+
+                case 5:
             }
         }
     }
 
-    private static void verificarIdade(int idade) {
-        if(idade > 20) {
-            System.out.println("Você é velho");
-        }
-    }
+    
 
 }
