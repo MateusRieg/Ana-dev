@@ -1,5 +1,8 @@
 package br.com.ana.model;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Pessoa {
 
     private String nome;
@@ -7,6 +10,8 @@ public class Pessoa {
     private Integer idade;
 
     private String cidade;
+
+    private List<String> hobbies = new ArrayList<>();
     
 
     public Pessoa() {
@@ -16,8 +21,10 @@ public class Pessoa {
         this.nome = nome;
         this.idade = idade;
         this.cidade = cidade;
+
         
     }
+
 
     public String getNome() {
         return nome;
@@ -43,5 +50,12 @@ public class Pessoa {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public List<String> getHobbies() {
+        return hobbies;
+    }
+    public void adicionarHobby(String hobby) {
+        this.hobbies.add(hobby);
     }
 }

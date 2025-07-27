@@ -3,8 +3,10 @@ package br.com.ana;
 import br.com.ana.model.Pessoa;
 
 import java.util.*;
-import java.util.ArrayList;
 
+public class App2 {
+
+    
 
 
 public class AppInit {
@@ -63,34 +65,35 @@ public class AppInit {
                             System.out.println("Você é manezinho!");
                             
                         }
-
+                    
                     } 
-                    break;
 
                     case 4:
-                   
+                    if (pessoas.isEmpty()) {
+                        System.out.println("Nenhuma pessoa cadastrada.");
+                        break;
+                    }
 
                     System.out.println("Nome da pessoa para adicionar hobbies:");
                     String nomePessoa = sc.nextLine();
                     boolean pessoaEncontrada = false;
                    // quebrar linha
 
-                    for (Pessoa person : pessoas) {
-                        if (person.getNome().equalsIgnoreCase(nomePessoa)) {
+                    for (Pessoa pessoa : pessoas) {
+                        if (pessoa.getNome().equalsIgnoreCase(nomePessoa)) {
                             pessoaEncontrada = true;
                             System.out.println("Digite o hobby que deseja adicionar:");
                             String hobby = sc.nextLine();
-                            person.adicionarHobby(hobby);
+                            pessoa.adicionarHobby(hobby);
                             System.out.println("Hobby adicionado com sucesso!");
                             break;
                         }
-    
+
                     }
 
                     if (!pessoaEncontrada) {
                         System.out.println("Pessoa não encontrada.");
                     }
-                    break;
                     
                 case 5:
                     program = false;
@@ -105,3 +108,6 @@ public class AppInit {
 
 
 
+
+    
+}
