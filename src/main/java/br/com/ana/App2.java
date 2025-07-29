@@ -15,7 +15,7 @@ public class AppInit {
 
         List<Pessoa> pessoas = new ArrayList<>();
         boolean program = true;
-         Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         while(program) {
             System.out.println("********** Bem vindo ao sistema de cadastro de pessoas **************");
@@ -61,7 +61,7 @@ public class AppInit {
                         System.out.println(" ");
                     
 
-                        if(person.getCidade().equals("Florianopolis")  ) {
+                        if(person.getCidade().equals("Florianopolis")) {
                             System.out.println("Você é manezinho!");
                             
                         }

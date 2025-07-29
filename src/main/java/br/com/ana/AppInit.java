@@ -13,7 +13,7 @@ public class AppInit {
 
         List<Pessoa> pessoas = new ArrayList<>();
         boolean program = true;
-         Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         while(program) {
             System.out.println("********** Bem vindo ao sistema de cadastro de pessoas **************");
@@ -34,15 +34,15 @@ public class AppInit {
                     int idade = Integer.parseInt(sc.nextLine());
                     System.out.println("Qual a sua cidade: ");
                     String cidade = sc.nextLine();
-                    System.out.println("Quais são os seus hobbies: ");
-                    String hobbies = sc.nextLine();
+                    // System.out.println("Quais são os seus hobbies: ");
+                    // String hobbies = sc.nextLine();
 
 
                     Pessoa pessoa1 = new Pessoa();
                     pessoa1.setNome(name);
                     pessoa1.setIdade(idade);
                     pessoa1.setCidade(cidade);
-                    pessoa1.adicionarHobby(hobbies);
+                    //pessoa1.adicionarHobby(hobbies);
                     pessoas.add(pessoa1);
                     break;
 
@@ -59,10 +59,12 @@ public class AppInit {
                         System.out.println(" ");
                     
 
-                        if(person.getCidade().equals("Florianopolis")  ) {
+                        if(person.getCidade().equals("Florianopolis")) {
                             System.out.println("Você é manezinho!");
                             
-                        }
+                        } if(person.getHobbies().isEmpty()) {
+                            System.out.println("Você não tem hobbies cadastrados.");
+                        } 
 
                     } 
                     break;
